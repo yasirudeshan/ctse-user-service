@@ -44,6 +44,10 @@ jobs:
           key: ${{ secrets.EC2_KEY }}
           script: |
             docker pull rpyasiru/user-service:latest
+
+            # Create the network if it doesn't exist
+            docker network inspect app-network >/dev/null 2>&1 || docker network create app-network
+
             docker stop user-service || true
             docker rm user-service || true
             docker run -d \
@@ -56,3 +60,4 @@ jobs:
               -e TOKEN_EXPIRATIONMS=36000000 \
               -e SPRING_PROFILES_ACTIVE=docker \
               rpyasiru/user-service:latest
+          
