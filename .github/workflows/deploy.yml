@@ -1,4 +1,4 @@
-name: Deploy User Service to EC2
+name: Deploy User  to EC2
 
 on:
   push:
