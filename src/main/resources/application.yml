@@ -21,7 +21,7 @@ server:
 #    fetchRegistry: true
 #    service-url:
 #      defaultZone: http://eureka-0.eureka.default.svc.cluster.local:8761/eureka
-#update
+#add new comment
 
 eureka:
   client:
